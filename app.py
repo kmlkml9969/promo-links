@@ -39,76 +39,76 @@ def view():
     <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tautan Promosi</title>
         <style>
             body {{
                 font-family: Arial, sans-serif;
-                background: linear-gradient(135deg, #eef9ff, #d6f0ff);
+                background: #eef9ff;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                padding: 30px;
+                padding: 20px;
                 margin: 0;
             }}
             h2 {{
                 color: #0077cc;
-                margin-bottom: 20px;
+                margin-bottom: 15px;
+                text-align: center;
             }}
             .container {{
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 20px;
-                width: 100%;
-                max-width: 900px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                width: 90%;
+                max-width: 500px;
+                margin: auto;
             }}
             .card {{
+                width: 100%;
                 background: white;
-                border-radius: 16px;
+                border-radius: 12px;
                 padding: 20px;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
                 text-align: center;
-                transition: transform 0.2s;
-            }}
-            .card:hover {{
-                transform: translateY(-5px);
             }}
             .card h3 {{
                 color: #333;
+                margin-bottom: 10px;
             }}
             .card p {{
-                font-size: 14px;
+                font-size: 16px;
                 color: #555;
-                margin: 10px 0;
                 word-break: break-all;
+                margin-bottom: 12px;
             }}
             button.button {{
-                display: inline-block;
-                margin-top: 10px;
-                padding: 10px 18px;
+                width: 100%;
+                padding: 14px;
                 background: #0077cc;
                 color: white;
                 border: none;
                 border-radius: 8px;
+                font-size: 16px;
                 font-weight: bold;
                 cursor: pointer;
-                transition: background 0.3s;
             }}
             button.button:hover {{
                 background: #005fa3;
             }}
             footer {{
-                margin-top: 30px;
+                margin-top: 20px;
                 font-size: 14px;
                 color: #666;
+                text-align: center;
             }}
         </style>
         <script>
             function copyLink(id) {{
                 var copyText = document.getElementById(id).innerText;
-                navigator.clipboard.writeText(copyText).then(function() {{
-                    alert('✅ Tautan disalin ke clipboard!');
-                }}, function(err) {{
-                    alert('❌ Gagal menyalin tautan');
+                navigator.clipboard.writeText(copyText).then(function(){{
+                    alert('✅ Tautan disalin!');
                 }});
             }}
         </script>
@@ -122,6 +122,6 @@ def view():
     </body>
     </html>
     """
-
+    
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)

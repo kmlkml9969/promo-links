@@ -15,6 +15,9 @@ def read_links():
         print("读取 CSV 失败:", e)
     return links
 
+@app.route("/")
+def index():
+    return "<h2>🌐 Selamat datang! Klik <a href='/view'>di sini</a> untuk melihat tautan promosi.</h2>"
 
 @app.route("/view")
 def view():
@@ -22,7 +25,6 @@ def view():
     if not links:
         return "<h2>❌ Tautan promosi belum tersedia</h2>"
 
-    # 生成卡片 HTML
     html_links = "".join([
         f"""
         <div class="card">
@@ -120,7 +122,6 @@ def view():
     </body>
     </html>
     """
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
